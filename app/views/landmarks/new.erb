@@ -1,0 +1,14 @@
+<h2>ENTER a NEW LANDMARK</h2>
+<form action="/landmarks" method="POST">
+  <label>Name: </label><input type="text" name="landmark[name]">
+  <label>Year completed: </label><input type="integer" name="landmark[year_completed]">
+  <br><br>
+
+  <label>Choose a figure for the new landmark:</label>
+  <%@figures.each do |figure|%>
+      <input type="radio" name="landmark[figure_id]" value="<%=figure.id%>" id="figure_<%=figure.id%>"><%=figure.name%></input>
+  <%end%>
+  <br><br>
+
+  <input type="submit" value="Create New Landmark">
+</form>

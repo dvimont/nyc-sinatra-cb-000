@@ -1,10 +1,7 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<h2>LANDMARK: <%= @landmark.name %></h2>
+<label>Year completed: </label><%=@landmark.year_completed%>
+<% if !@landmark.figure.nil? %>
+  <h4>Figure: <%= @landmark.figure.name %></h4>
+<% else %>
+  <h4>This landmark is not currently associated with a figure!</h4>
+<% end %>
